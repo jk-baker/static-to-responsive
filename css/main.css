@@ -4,10 +4,10 @@ html {
 
 body {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	font-size: 1em;
 	display: flex;
   justify-content: center;
   align-items: center;
+	font-size: 1em;
 }
 
 .container{
@@ -16,7 +16,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
 	flex-wrap: wrap;
 }
 
@@ -29,7 +28,6 @@ h3 {
 }
 h1 {
 	font-size: 1.875em;
-	width: 100%;
 }
 h2 {
 	font-size: 1.125em;
@@ -43,39 +41,48 @@ p {
 	line-height: 21px;
 }
 
+ul {
+	margin: 0;
+}
+
 /*The widths are in a percentage!*/
 header {
-	margin: 0 auto;
+	border-bottom: 3px solid #77a466;
+  text-align: center;
+  width: 100%;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
 }
 
 header h1 {
 	margin: 0;
-	padding: 38px 25px;
+	padding: 38px 20px 20px 20px;
+	border-bottom: 3px solid #77a466;
+	width: 100%;
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	padding: 46px 0;
-	border-top: 3px solid #77a466;
+	padding: 20px 0;
+	width:100%;
 }
 header nav ul {
 	margin: 0;
 	padding: 0;
-	display: flex;
-  justify-content: center;
-  align-items: center;
-	flex-direction: column;
-	flex-wrap: nowrap;
 }
+
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.875em;
-	padding: 20px 10px;
-	display: block;
+	padding: 10px 0;
+	list-style: none;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
@@ -84,23 +91,17 @@ header nav ul li a{
 /*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
-
- .main-image {
-	height: auto;
-} 
 
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
-	border-top: 3px solid #77a466;
 }
 
-.main-title {
-	height: auto;
-	border-bottom: 1px solid #eee;
-}
 .main-title h2 {
 	text-align: left;
 	padding: 5px 0;
@@ -109,28 +110,14 @@ header nav ul li a{
 .main-title p {
 	padding: 0;
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625;
 }
 
 .section-one,
 .section-two,
 .section-three {
-	width: 100%;
-	height: auto;
-}
-
-.section-one h3 {
-	padding: 10px 0;
-}
-
-.section-two {
 	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
-}
-
-.section-two h3,
-.section-three h3 {
-	padding: 10px 0;
+	width: 100%;
 }
 
 .menu {
@@ -145,24 +132,131 @@ header nav ul li a{
 .reviews {
 	color: #333;
 	font-size: 1em;
-	line-height: 21px;
+	line-height: 2;
 }
 
 .address {
 	font-size: 1em;
-	line-height: 24px;
+	line-height: 1.3125;
 }
 
 /*The widths are in a percentage!*/
 footer {
 	border-top: 3px solid #eee;
-	margin: 0 auto;
 	text-align: center;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Galada', cursive;
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+/***** RESPONSIVE TABLET & DESKTOP *****/
+
+@media all and (min-width:768px) {
+
+	.bottom-section {
+		justify-content: space-between;
+		align-items: flex-start;
+		border-bottom: 1px solid #eee;
+	}
+
+	.section-one,
+	.section-two,
+	.section-three {
+		flex-basis: 30%;
+		border-top: none;
+	}
+
+	.section-two {
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+		padding: 0 20px;
+	}
+
+	/***
+	.section-three {
+		flex-direction: column;
+	}
+
+	.section-one h3,
+	.section-two h3,
+	.section-three h3 {
+		padding: 0;
+	}
+	
+	.section-two,
+	.section-three {
+		padding: 0 10px;
+	}
+
+	footer {
+		border-top: none;
+	} ***/
+}
+
+@media all and (min-width:1200px) {
+	/* Desktop styles here */
+ header {
+	justify-content: space-between;
+ }
+
+ header h1 {
+	width: 30%;
+	padding: 0;
+	border-bottom: none;
+	text-align: left;
+ }
+
+ header nav {
+	 width: 40%;
+ }
+
+ header nav ul {
+	display: flex;
+	justify-content: space-between;
+ }
+/***
+
+ .top-section,
+.bottom-section {
+	clear: both;
+}
+
+.main-image {
+	float: left;
+}
+
+.main-image img {
+	border-top: none;
+}
+
+.main-title {
+	float: left;
+	border-bottom: none;
+}
+
+.section-one,
+.section-two,
+.section-three {
+	width: 33%;
+	float: left;
+	border-top: 1px solid #eee;
+}
+
+.section-two h3,
+.section-three h3 {
+	padding: 10px 30px;
+}
+
+footer {
+	height: 50px;
+	clear: both;
+} ***/
 }
